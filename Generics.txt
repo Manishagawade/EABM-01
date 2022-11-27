@@ -1,0 +1,135 @@
+Generics: This feature came into java 1.5 version.
+
+The main purpose of generics is to provide typen safety.
+When we use generics there is no need to do typcasting.
+
+Example : Without generics
+
+package generics;
+
+import java.util.ArrayList;
+
+public class WithoutGenerics {
+
+	public static void main(String[] args) {
+		
+		ArrayList al= new ArrayList();
+		al.add(11);
+		al.add(33);
+		al.add("Santosh");
+		al.add("Bikkad");
+		System.out.println(al);
+		
+		Integer i = (Integer) al.get(0);
+		System.out.println(i);
+		
+		String s = (String) al.get(2);
+		System.out.println(s);
+	}
+}
+
+
+
+Example 1:
+
+
+package generics;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+
+public class WithoutGenerics {
+
+	public static void main(String[] args) {
+		
+	
+	ArrayList list=new ArrayList();  
+	list.add("rahul");  
+	list.add("jai");  
+	//list.add(32);//compile time error  
+	  
+	String s=(String) list.get(1);//type casting is not required  
+	System.out.println("element is: "+s);  
+	  
+	Iterator itr=list.iterator();  
+	while(itr.hasNext()){  
+	String next = (String) itr.next();  
+	System.out.println(next);
+	}  
+	}  
+}
+
+
+
+
+Example : With generics
+
+package generics;
+
+import java.util.ArrayList;
+
+public class WithGenerics {
+
+	public static void main(String[] args) {
+		
+		ArrayList<Integer> al=new ArrayList<Integer>();
+		al.add(22);
+		al.add(44);
+		al.add(77);
+		System.out.println(al);
+		
+		Integer integer = al.get(0);
+		System.out.println(integer);
+		
+
+		Integer integer1 = al.get(1);
+		System.out.println(integer1);
+		
+		
+		
+		ArrayList<String> al1=new ArrayList<String>();
+		al1.add("Santosh");
+		al1.add("Bikkad");
+		al1.add("Umesh");
+		System.out.println(al1);
+		
+		String string = al1.get(1);
+		System.out.println(string);
+	
+		
+		String string2 = al1.get(2);
+		System.out.println(string2);
+	}
+}
+
+
+Example 1;
+
+
+package generics;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+
+public class WithoutGenerics {
+
+	public static void main(String[] args) {
+		
+	ArrayList<String> list=new ArrayList<String>();  
+	list.add("rahul");  
+	list.add("jai");  
+	//list.add(32);//compile time error  
+	  
+	String s=list.get(1);//type casting is not required  
+	System.out.println("element is: "+s);  
+	  
+	Iterator<String> itr=list.iterator();  
+	while(itr.hasNext()){  
+	String next = itr.next();  
+	System.out.println(next);
+	}  
+	}  
+}
+
+
+
